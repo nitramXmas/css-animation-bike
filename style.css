@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.scrolling-bg-container {
+  overflow: hidden;
+  z-index: 1;
+}
+
+.scrolling {
+  width: 400vw;
+  height: 100vh;
+  background-image: url(./images/mountain.jpg);
+  background-repeat: round;
+  background-size: contain;
+  animation-name: bg-moove;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.bike-position {
+  z-index: 2;
+  position: absolute;
+  bottom: calc(19vh);
+}
+
+.bike {
+  max-width: 20vw;
+  max-height: 20vh;
+  width: auto;
+  height: auto;
+  animation-name: ride;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bg-moove {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-200vw);
+  }
+}
+
+@keyframes ride {
+  from {
+    transform-origin: 25% 25%;
+    transform: translateX(-20vw);
+  }
+
+  50% {
+    transform: translateX(60vw) rotate(-40deg);
+  }
+
+  to {
+    transform: translateX(100vw) rotate(-40deg);
+  }
+}
